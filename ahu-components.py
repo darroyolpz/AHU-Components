@@ -10,6 +10,9 @@ df_sales = pd.read_excel(sales_file, usecols = cols)
 for col in cols:
     df_sales[col] = df_sales[col].astype(str)
 
+# Create Year column
+df_sales['Year'] = df_sales['Date'].str[:4]
+
 # Rename columns
 df_sales = df_sales.rename(columns={'Ref order no': 'MO no'})
 
